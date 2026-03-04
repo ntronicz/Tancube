@@ -1,6 +1,0 @@
-# .nixpacks/nixpacks.toml
-providers = ["php", "node"]
-
-[variables]
-# Force Node.js version 20 (or newer) for Vite/Tailwind
-NIXPACKS_NODE_VERSION = "20"
