@@ -2,9 +2,5 @@
 providers = ["php", "node"]
 
 [variables]
-# Tell Nixpacks which Node version to install.
+# Force Node.js version 20 (or newer) for Vite/Tailwind
 NIXPACKS_NODE_VERSION = "20"
-
-# Optional – make the build a little faster by using the same node version for the
-# runtime as for the build step.
-NIXPACKS_NODE_ENV = "production"
