@@ -1,8 +1,7 @@
-[providers.node]
-node_version = "20"
+providers = ["php", "node"]
+
+[variables]
+NIXPACKS_NODE_VERSION = "20"
 
 [phases.install]
 cmds = ["composer install --no-dev --optimize-autoloader", "rm -rf node_modules package-lock.json", "npm install"]
-
-[phases.build]
-cmds = ["npm run build"]
