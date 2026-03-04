@@ -12,4 +12,4 @@ cmds = ["composer install --no-dev --optimize-autoloader && npm install"]
 cmds = ["npm run build"]
 
 [start]
-cmd = "mkdir -p /var/log/nginx && node /assets/scripts/prestart.mjs /assets/nginx.template.conf /nginx.conf && (php-fpm -y /assets/php-fpm.conf & nginx -c /nginx.conf)"
+cmd = "mkdir -p /var/log/nginx && php artisan migrate --force && php artisan db:seed --class=SuperAdminSeeder --force && php artisan storage:link && node /assets/scripts/prestart.mjs /assets/nginx.template.conf /nginx.conf && (php-fpm -y /assets/php-fpm.conf & nginx -c /nginx.conf)"
