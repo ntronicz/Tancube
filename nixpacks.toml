@@ -1,4 +1,4 @@
-providers = ["php", "node"]
+providers = ["php"]
 
 [phases.setup]
 nixPkgs = ["(php.withExtensions (pe: pe.enabled ++ []))", "nginx", "libmysqlclient", "phpPackages.composer", "nodejs_20", "npm-10_x"]
@@ -6,7 +6,7 @@ nixLibs = ["libmysqlclient"]
 nixOverlays = ["https://github.com/railwayapp/nix-npm-overlay/archive/main.tar.gz"]
 
 [phases.install]
-cmds = ["composer install --no-dev --optimize-autoloader && rm -rf node_modules package-lock.json && npm install"]
+cmds = ["composer install --no-dev --optimize-autoloader && npm install"]
 
 [phases.build]
 cmds = ["npm run build"]
